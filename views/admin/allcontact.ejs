@@ -1,0 +1,41 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9 p-3">
+                <div class="form-group">
+                  
+                  <input type="text"
+                    class="form-control" name="" id="myInput" aria-describedby="helpId" placeholder="Search By Anything">
+                  
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Details</th>
+                            <th>RegDate</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <% for(var x=0;x< result.length; x++){ %>
+                        <tr>
+                            <td><%= result[x].name %></td>
+                            <td><%= result[x].email %></td>
+                            <td><%= result[x].phone %></td>
+                            <td><%= result[x].details %></td>
+                            <td><%= result[x].created_at %></td>
+                            <td>
+                                <a name="" id="" class="btn btn-danger" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    

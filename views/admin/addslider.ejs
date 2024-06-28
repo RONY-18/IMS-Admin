@@ -1,0 +1,47 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div class="row mt-2">
+                            <div class="col-lg-12">
+                                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                    <strong>Alert!</strong> <%= msg %>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="/admin/storeslider" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                  
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                  <label for="">Image</label>
+                                  <input type="file" required class="form-control-file" name="image" id="" placeholder="" aria-describedby="fileHelpId">
+                                  <small id="fileHelpId" class="form-text text-muted">*</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                  <label for="">Serial</label>
+                                  <input type="number" required
+                                    class="form-control" name="serial" id="" aria-describedby="helpId" placeholder="">
+                                  <small id="helpId" class="form-text text-muted">*</small>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    

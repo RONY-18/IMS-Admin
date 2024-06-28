@@ -1,0 +1,45 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9 p-3">
+                <div class="form-group">
+                  
+                  <input type="text"
+                    class="form-control" name="" id="myInput" aria-describedby="helpId" placeholder="Search By Anything">
+                  
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Details</th>
+                            <th>Tfee</th>
+                            <th>DFee</th>
+                            <th>RegDate</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <% for(var x=0;x< result.length; x++){ %>
+                        <tr>
+                            <td scope="row"><img style="height: 50px;" src="/course/<%= result[x].image %>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></td>
+                            <td><%= result[x].name %></td>
+                            <td><%= result[x].details %></td>
+                            <td><%= result[x].tfee %></td>
+                            <td><%= result[x].dfee %></td>
+                            <td><%= result[x].created_at %></td>
+                            <td>
+                                <a name="" id="" class="btn btn-warning" href="/admin/viewcourse/<%= result[x].id %>" role="button">View</a>
+                                <a name="" id="" class="btn btn-success" href="/admin/editcourse/<%= result[x].id %>" role="button">Edit</a>
+                                <a name="" id="" class="btn btn-danger" href="/admin/deletecourse/<%= result[x].id %>" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    

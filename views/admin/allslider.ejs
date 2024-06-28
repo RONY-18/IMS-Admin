@@ -1,0 +1,39 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9 p-3">
+                <div class="form-group">
+                  
+                  <input type="text"
+                    class="form-control" name="" id="myInput" aria-describedby="helpId" placeholder="Search By Anything">
+                  
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            
+                            <th>Status</th>
+                            <th>Serial</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <% for(var x=0;x< result.length; x++){ %>
+                        <tr>
+                            <td scope="row"><img style="height: 50px;" src="/slider/<%= result[x].image %>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></td>
+                            <td><%= result[x].status %></td>
+                            <td><%= result[x].serial %></td>
+                            <td>
+                                <a name="" id="" class="btn btn-success" href="#" role="button">Edit</a>
+                                <a name="" id="" class="btn btn-danger" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    

@@ -1,0 +1,62 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div class="row mt-2">
+                            
+                        </div>
+                        <form action="" method="post">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                  <label for="">Name</label>
+                                  <input type="text" required value="<%= result[0].name %>"
+                                    class="form-control" name="name" id="" aria-describedby="helpId" placeholder="">
+                                  <small id="helpId" class="form-text text-muted">*</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label for="">Details</label>
+                                <textarea class="form-control" name="details" id="" rows="3"><%= result[0].details %></textarea>
+                              </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                  <label for="">Tfee</label>
+                                  <input type="number" required value="<%= result[0].tfee %>"
+                                    class="form-control" name="tfee" id="" aria-describedby="helpId" placeholder="">
+                                  <small id="helpId" class="form-text text-muted">*</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label for="">Dfee</label>
+                                <input type="number" required value="<%= result[0].dfee %>"
+                                  class="form-control" name="dfee" id="" aria-describedby="helpId" placeholder="">
+                                <small id="helpId" class="form-text text-muted">*</small>
+                              </div>
+                          </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                  <label for="">Image</label>
+                                  <input type="file" required class="form-control-file" name="image" id="" placeholder="" aria-describedby="fileHelpId">
+                                  <img src="/course/<%= result[0].image %>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="height:70px;">
+                                  <small id="fileHelpId" class="form-text text-muted">*</small>
+                                </div>
+                            </div>
+                        </div>
+                        <a name="" id="" class="btn btn-primary" href="/admin/allcourse" role="button">Back</a>
+                    </form>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    

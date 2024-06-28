@@ -1,0 +1,58 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div class="row mt-2">
+                            <div class="col-lg-12">
+                                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                    <strong>Alert!</strong> <%= msg %>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="/admin/storeamount" method="post">
+                        <div class="row">
+                          
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                  <label for="">sid</label>
+                                  <input type="number" required value="<%= v1 %>" readonly
+                                    class="form-control" name="sid" id="" aria-describedby="helpId" placeholder="">
+                                  <small id="helpId" class="form-text text-muted">*</small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label for="">oid</label>
+                                <input type="number" required value="<%= v2 %>" readonly
+                                  class="form-control" name="oid" id="" aria-describedby="helpId" placeholder="">
+                                <small id="helpId" class="form-text text-muted">*</small>
+                              </div>
+                          </div>
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label for="">amount</label>
+                                <input type="number" required value="0" min="0"
+                                  class="form-control" name="amount" id="" aria-describedby="helpId" placeholder="">
+                                <small id="helpId" class="form-text text-muted">*</small>
+                              </div>
+                          </div>
+                           
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    

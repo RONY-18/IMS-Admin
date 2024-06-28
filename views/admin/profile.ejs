@@ -1,0 +1,47 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9">
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="/images/student.png" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Student</h4>
+                                <p class="card-text">(<%=count1%>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="/images/course.png" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Course</h4>
+                                <p class="card-text">(<%=count2%>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="/images/order.png" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Order</h4>
+                                <p class="card-text">(<%=count3%>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="/images/order.png" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Today Order</h4>
+                                <p class="card-text">(<%=count4%>)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    

@@ -1,0 +1,52 @@
+<%- include("include/header.ejs") %>
+      <div class="container-fluid">
+        <div class="row">
+            <%- include("include/sidebar.ejs") %> 
+            <div class="col-lg-9 p-3">
+                <div class="form-group">
+                  
+                  <input type="text"
+                    class="form-control" name="" id="myInput" aria-describedby="helpId" placeholder="Search By Anything">
+                  
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Tfee</th>
+                            <th>PFee</th>
+                            <th>RegDate</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <% for(var x=0;x< result3.length; x++){ %>
+                        <tr>
+                            <% for(var y=0;y< result.length; y++){ %>
+                                <%if(result3[x].sid==result[y].id){%>
+                                <td><%= result[y].name %></td>
+                                <% } %>
+                            <% } %>
+                            <% for(var y=0;y< result2.length; y++){ %>
+                                <%if(result3[x].cid==result2[y].id){%>
+                                <td><%= result2[y].name %></td>
+                                <% } %>
+                            <% } %>
+                            <td><%= result3[x].tfee %></td>
+                            <td><%= result3[x].pfee %></td>
+                            <td><%= result3[x].created_at %></td>
+                            <td>
+                               <a name="" id="" class="btn btn-success" href="/admin/editorder/<%= result3[x].sid %>/<%= result3[x].id %>" role="button">Edit</a>
+                               <a name="" id="" class="btn btn-success" href="/admin/addamount/<%= result3[x].sid %>/<%= result3[x].id %>" role="button">Add Amount</a>
+                               <a name="" id="" class="btn btn-success" href="/admin/viewamount/<%= result3[x].sid %>/<%= result3[x].id %>" role="button">View Amount</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+<%- include("include/footer.ejs") %>    
